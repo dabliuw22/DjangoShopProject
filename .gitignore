@@ -1,5 +1,6 @@
 secret.json
 .idea/
+api/
 media/img/
 api/migrations
 payment/migrations
