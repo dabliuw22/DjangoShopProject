@@ -1,9 +1,11 @@
 from django.shortcuts import get_object_or_404
+from django.dispatch import receiver
 from paypal.standard.models import ST_PP_COMPLETED
 from paypal.standard.ipn.signals import valid_ipn_received
 
 from shop import models
 
+@receiver(signal = valid_ipn_received)
 def payment_notification(sender, **kwargs):
     obj = sender
     if obj.payment_status == ST_PP_COMPLETED:
@@ -15,4 +17,4 @@ def payment_notification(sender, **kwargs):
             producto.set_stock(item.cantidad)
             producto.save()
 
-valid_ipn_received.connect(payment_notification)
+#valid_ipn_received.connect(payment_notification)
