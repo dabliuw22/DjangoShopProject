@@ -1,0 +1,10 @@
+secret.json
+.idea/
+media/img/
+api/migrations
+payment/migrations
+shop/migrations
+api/__pycache__/
+payment/__pycache__/
+shop/__pycache__/
+ShopProject/__pycache__/
