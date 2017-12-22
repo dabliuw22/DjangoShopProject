@@ -1,6 +1,6 @@
 # Django Paypal Shop Project 
 
-En este proyecto se desarrollara una tienda en línea, la cual permitira el pago mediante Paypal y el uso de tareas asincronas con *Celery*. Se utilizara el interprete de python3, por lo que debemos verificar si tenemos instalada la versión, ingresando en la terminal o consola de comandos. Se utilizara como gestor de bases de datos a *MySQL*. Además se brindara la implementación de un carro de compre mediante el uso de sessiones el cual se agregara al context_processors.
+En este proyecto se desarrollara una tienda en línea, la cual permitira el pago mediante Paypal y el uso de tareas asincronas con *Celery*. Se utilizara el interprete de python3, por lo que debemos verificar si tenemos instalada la versión, ingresando en la terminal o consola de comandos. Se utilizara como gestor de bases de datos a *MySQL*. Además se brindara la implementación de un carro de compra mediante el uso de sessiones el cual se agregara al context_processors.
 
 Los pasos a tener en cuenta son los siguientes:
  1. Crear una cuenta en [Registro PayPal](URL "https://www.paypal.com/us/webapps/mpp/account-selection").
