@@ -10,5 +10,9 @@ def payment_notification(sender, **kwargs):
         orden = get_object_or_404(models.Orden, id = obj.invoice)
         orden.servida = True
         orden.save()
+        for item in orden.get_detalles_orden():
+            producto = item.producto
+            producto.set_stock(item.cantidad)
+            producto.save()
 
 valid_ipn_received.connect(payment_notification)
