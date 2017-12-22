@@ -31,6 +31,9 @@ class Producto(models.Model):
     def get_precio(self):
         return Decimal(self.precio*(1-self.descuento))
 
+    def set_stock(self, stock = 0):
+        self.stock -= stock
+
 class Orden(models.Model):
     usuario = models.ForeignKey(User, on_delete = models.CASCADE)
     fecha = models.DateTimeField(auto_now_add = True)
