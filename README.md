@@ -47,24 +47,12 @@ Los pasos a tener en cuenta son los siguientes:
  ```
     celery -A ShopProject worker -l info
  ```
- 10. Probar sin funcionan los pagos mediante PayPal IPN Simulator, lo cual no se puede hacer con el localhost,
- por lo que instalaremos [ngrok](URL "https://ngrok.com/") y luego lo iniciaremor desde la terminal con el 
- siguiente comando:  
- ```
- ngrok http 8000
- ```
- Donde se desplegaran unas url's dinamicas virtuales para el proyecto actual que se encuentra corriendo, ejemplo:
- ```
-    Session Status                online                                            
-    Version                       2.2.8                                             
-    Region                        United States (us)                                
-    Web Interface                 http://127.0.0.1:4040                             
-    Forwarding                    http://ffb56f6f.ngrok.io -> localhost:8000        
-    Forwarding                    https://ffb56f6f.ngrok.io -> localhost:8000 
- ```
- **Nota:** Cada vez que lo inicien se generara una url nueva, recuerden que es dinamica, por tanto debemos configurar
- ALLOWED_HOSTS de nuestro *settings.py* según el host que generemos: 
- ```ALLOWED_HOSTS = ['ffb56f6f.ngrok.io']```
- Ahora debemos logearnos en PayPayl y dirigirnos a la [IPN Simulator](URL "https://developer.paypal.com/developer/ipnSimulator/")
- y en el campo IPN handler URL agregamos `http://ffb56f6f.ngrok.io/payment/done` y seleccionamos la Transaction Type `eCheck - complete`, 
- luego enviamos el formulario y nos dará la respuesta de la verificación.
+ 10. Probar sin funcionan los pagos mediante PayPal Developer, nos dirigimos a la opción Accounts de Sandbox,
+    y cambiamos el PAYPAL_RECEIVER_EMAIL en nuestro archivo *secret.json* por el email de prueba de tipo BUSINESS,
+    :
+    ```
+    "PAYPAL_RECEIVER_EMAIL": "email-facilitator@email.com",
+    ```
+    Luego realizmos el proceso de compra y usamos el email de tipo PERSONAL para realizar la compra.
+ 
+     **Nota:** Recuerda que debes estar logueado en PayPal para poder observar las cuentas de prueba.
