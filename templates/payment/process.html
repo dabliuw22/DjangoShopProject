@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block header %}
+    {% include 'include/navbar.html' %}
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 m6">
+            <ul class="collection">
+                {% for item in orden.get_detalles_orden%}
+                    <li class="collection-item avatar">
+                        <img src="{%if item.producto.imagen%}{{item.producto.imagen.url}}{%else%}{%static 'img/no_image.png'%}{%endif%}" alt="" class="circle">
+                        <span class="title">{{item.producto}}</span>
+                        <p>Precio (c/u): {{item.precio}}</p>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content black-text">
+                    <span class="card-title center">Pagar usando PayPal</span>
+                    <div class="center">
+                        {{ form.render }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

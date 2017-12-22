@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div>
+        <h1>Orden de compra creada exitosamente para el usuario {{orden.usuario}}</h1>
+    </div>
+    <div>
+        <table class="highlight centered responsive-table">
+            <tbody>
+                <tr>
+                    <td>Producto</td>
+                    <td>Cantidad</td>
+                    <td>Precio (c/u)</td>
+                </tr>
+            </tbody>
+            <thead>
+                {% for p in productos %}
+                <tr>
+                    <th>{{p.producto}}</th>
+                    <th>{{p.cantidad}}</th>
+                    <th>{{p.precio}}</th>
+                </tr>
+                {% endfor %}
+            </thead>
+        </table>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

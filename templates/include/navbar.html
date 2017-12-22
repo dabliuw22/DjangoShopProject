@@ -1,0 +1,86 @@
+{% load static%}
+<header>
+    <div class="navbar-fixed">
+        <nav class="fondo-azul">
+            <div class="nav-wrapper">
+                <a href="{% url 'index' %}" class="brand-logo">MyShop.com</a>
+                <a href="#" data-activates="mobile-nav" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'index' %}"><i class="material-icons left">home</i>Inicio</a></li>
+                    <li><a href="#"><i class="material-icons left">view_module</i>Productos</a></li>
+                    <li><a class="carrito" data-activates="carrito"
+                           href="{% url 'shop:carrito_detail' %}">
+                            <i class="material-icons left">shopping_cart</i>Carrito ({{carrito|length}})
+                            {% if carrito|length > 0 %}
+                            <i class="material-icons right">arrow_drop_down</i>
+                            {% endif %}
+                        </a>
+                        <ul id="carrito" class="dropdown-content collection">
+                            {% for item in carrito %}
+                                <li class="collection-item avatar">
+                                    <img src="{%if item.producto.imagen%}{{item.producto.imagen.url}}{%else%}{%static 'img/no_image.png'%}{%endif%}" alt="" class="circle">
+                                    <span class="title">{{item.producto.nombre}} ({{item.cantidad}})</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% if user.is_superuser and user.is_staff %}
+                        <li><a href="{% url 'admin:index' %}"><i class="material-icons left">lock</i>Admin</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li><a class="dropdown-button" data-activates="usuario1">
+                                <i class="material-icons left">person</i>{{ user.get_full_name|default:user.username }}
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                            <ul id="usuario1" class="dropdown-content">
+                                <li><a class="grey-text text-darken-1" href="#">Perfil</a></li>
+                                <li><a class="grey-text text-darken-1" href="#">Historial</a></li>
+                                <li class="divider"></li>
+                                <li><a class="grey-text text-darken-1" href="{% url 'logout'%}">Salir</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a href="#"><i class="material-icons left">person_add</i>Registrarse</a></li>
+                        <li><a href="{% url 'login' %}"><i class="material-icons left">vertical_align_top</i>Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div id="side-nav">
+        <ul class="side-nav" id="mobile-nav">
+            <li><a href="{% url 'index' %}"><i class="material-icons left">home</i>Inicio</a></li>
+            <li><a href="{% url 'shop:carrito_detail' %}"><i class="material-icons left">shopping_cart</i>Carrito ({{carrito|length}})</a></li>
+            <li><a href="#"><i class="material-icons left">event</i>Productos</a></li>
+            {% if user.is_superuser and user.is_staff %}
+                <li><a href="#"><i class="material-icons left">lock</i>Admin</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <li>
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <a class="collapsible-header" style="padding-left: 32px;">
+                                <i class="material-icons left">person</i>{{ user.get_full_name|default:user.username }}
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#">Perfil</a></li>
+                                    <li><a href="#">Historial</a></li>
+                                    <li>
+                                        <a href="#">Salir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            {% else %}
+                <li><a href="#"><i class="material-icons left">person_add</i>Registrarse</a></li>
+                <li><a href="#"><i class="material-icons left">vertical_align_top</i>Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+	<div class="content-login card">
+		<div class="card-content">
+			<span class="card-title center red-text text-darken-2">Iniciar Sessi&oacute;n</span>
+			<form action="" method="POST">
+				{% csrf_token %}
+				<div class="col s12">
+					<div class="row">
+						<div class="input-field">
+							<input id="username" name="username" type="text" class="validate">
+							<label for="username">Username</label>
+						</div>
+						<ol>
+							{% for error in form.username.errors %}
+							<li>
+								<strong class="red-text text-error">{{ error|escape }}</strong>
+							</li>
+							{% endfor %}
+						</ol>
+					</div>
+					<div class="row">
+						<div class="input-field">
+							<input id="password" name="password" type="password" class="validate">
+							<label for="password">Password</label>
+						</div>
+						<ol>
+							{% for error in form.password.errors %}
+							<li>
+								<strong class="red-text text-error">{{ error|escape }}</strong>
+							</li>
+							{% endfor %}
+						</ol>
+					</div>
+					<div class="row center">
+						<button class="btn morado br-20 waves-effect waves-light" type="submit" name="action">
+							Login<i class="material-icons right">send</i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="fixed-action-btn vertical">
+		<a class="btn-floating btn-large rojo pulse">
+			<i class="large material-icons">menu</i>
+		</a>
+		<ul>
+			<li><a href="" class="btn-floating verde tooltipped" data-position="left" data-delay="50" data-tooltip="Crear Usuario">
+				<i class="material-icons">person_add</i>
+			</a></li>
+			<li><a href="{% url 'index' %}" class="btn-floating amarillo tooltipped" data-position="left" data-delay="50" data-tooltip="Inicio">
+				<i class="material-icons">home</i>
+			</a></li>
+		</ul>
+	</div>
+{% endblock %}
+{% block footer %}{% endblock %}

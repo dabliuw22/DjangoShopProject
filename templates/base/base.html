@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MyShop.com</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {% block styles %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/materialize.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    {% endblock %}
+</head>
+<body {% block body %}{% endblock %}>
+    {% block header %}{% endblock %}
+    {% block main %}{% endblock %}
+    {% block footer %}
+        <footer class="page-footer fondo-azul">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">MyShop.com</h5>
+					<p class="grey-text text-lighten-4">Tienda en línea</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Redes Sociales</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Google+</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">You Tube</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2017 MyShop.com <a class="grey-text text-lighten-4 right"
+					href="#!">More Links</a>
+			</div>
+		</div>
+	</footer>
+    {% endblock %}
+    {% block scripts %}
+        <script src="{% static 'js/jquery/jquery-3.2.1.min.js' %}"></script>
+		<script src="{% static 'js/materialize/materialize.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
