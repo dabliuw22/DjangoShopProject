@@ -19,13 +19,13 @@ Los pasos a tener en cuenta son los siguientes:
  ```
     python3 -m venv entorno
  ```
- 5. Instalar las apps requeridas:
- ```
-    pip3 install -r requirements.txt
- ```
- 6. Clonar el proyecto o descargarlo:
+ 5. Clonar el proyecto o descargarlo:
  ```
     git clone https://github.com/dabliuw22/DjangoShopProject.git
+ ```
+ 6. Instalar las apps requeridas:
+ ```
+    pip3 install -r requirements.txt
  ```
  7. Crear un archivo en la carpeta del proyecto, con nombre y extensión *secret.json*, donde agregaremos las key's y credenciales del proyecto:
  ```[json]
