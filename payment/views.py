@@ -9,11 +9,10 @@ def payment_process(request):
     orden_id = request.session.get('orden_id')
     orden = get_object_or_404(models.Orden, pk = orden_id)
     host = request.get_host()
-
     paypal_dict = {
         'business': settings.PAYPAL_RECEIVER_EMAIL,
         'amount': str(orden.get_total()),
-        'item_name': 'Order {}'.format(orden.id),
+        'item_name': 'Orden {}'.format(orden.id),
         'invoice': str(orden.id),
         'currency_code': 'USD',
         'notify_url': 'http://{}{}'.format(host, reverse('paypal:paypal-ipn')),
