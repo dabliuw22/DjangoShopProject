@@ -47,7 +47,7 @@ Los pasos a tener en cuenta son los siguientes:
  ```
     celery -A ShopProject worker -l info
  ```
- 10. Probar funcionamiento los pagos mediante PayPal Developer, nos dirigimos a la opción Accounts de Sandbox,
+ 10. Probar funcionamiento de pagos mediante PayPal, en PayPal Developers nos dirigimos a la opción Accounts de Sandbox,
     y cambiamos el PAYPAL_RECEIVER_EMAIL en nuestro archivo *secret.json* por el email de prueba de tipo BUSINESS:
     ```
     "PAYPAL_RECEIVER_EMAIL": "email-facilitator@email.com",
