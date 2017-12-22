@@ -1,0 +1,68 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.text-error {
+	font-size: 0.8em;
+}
+
+.content-login {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	height: 380px;
+}
+
+.fondo-azul {
+	background: -webkit-linear-gradient(left, rgb(51, 105, 230), rgb(0, 174, 255)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, rgb(51, 105, 230), rgb(0, 174, 255)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, rgb(51, 105, 230), rgb(0, 174, 255)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, rgb(51, 105, 230), rgb(0, 174, 255)); /* Standard syntax */
+	background: -ms-linear-background(left, rgb(51, 105, 230), rgb(0, 174, 255)); /* IE 10 */
+}
+
+.morado {
+	background: -webkit-linear-gradient(left, rgb(142, 36, 170), rgb(255, 110, 64)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, rgb(142, 36, 170), rgb(255, 110, 64)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, rgb(142, 36, 170), rgb(255, 110, 64)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, rgb(142, 36, 170), rgb(255, 110, 64)); /* Standard syntax */
+	background: -ms-linear-background(left, rgb(142, 36, 170), rgb(255, 110, 64)); /* IE 10 */
+}
+
+.azul {
+	background: -webkit-linear-gradient(left, rgb(2, 136, 209), rgb(38, 198, 218)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, rgb(2, 136, 209), rgb(38, 198, 218)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, rgb(2, 136, 209), rgb(38, 198, 218)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, rgb(2, 136, 209), rgb(38, 198, 218)); /* Standard syntax */
+	background: -ms-linear-background(left, rgb(2, 136, 209), rgb(38, 198, 218)); /* IE 10 */
+}
+
+.rojo {
+	background: -webkit-linear-gradient(left, rgb(255, 82, 82), rgb(244, 143, 177)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, rgb(255, 82, 82), rgb(244, 143, 177)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, rgb(255, 82, 82), rgb(244, 143, 177)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, rgb(255, 82, 82), rgb(244, 143, 177)); /* Standard syntax */
+	background: -ms-linear-background(left, rgb(255, 82, 82), rgb(244, 143, 177)); /* IE 10 */
+}
+
+.amarillo {
+	background: -webkit-linear-gradient(left, rgb(255, 111, 0), rgb(255, 202, 40)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, rgb(255, 111, 0), rgb(255, 202, 40)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, rgb(255, 111, 0), rgb(255, 202, 40)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, rgb(255, 111, 0), rgb(255, 202, 40)); /* Standard syntax */
+	background: -ms-linear-background(left, rgb(255, 111, 0), rgb(255, 202, 40)); /* IE 10 */
+}
+
+.verde {
+	background: -webkit-linear-gradient(left, rgb(67, 160, 71), rgb(29, 233, 182)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, rgb(67, 160, 71), rgb(29, 233, 182)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, rgb(67, 160, 71), rgb(29, 233, 182)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, rgb(67, 160, 71), rgb(29, 233, 182)); /* Standard syntax */
+	background: -ms-linear-background(left, rgb(67, 160, 71)), rgb(29, 233, 182)); /* IE 10 */
+}
+
+.br-20 {
+	border-radius: 20px;
+}
